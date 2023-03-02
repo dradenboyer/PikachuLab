@@ -32,18 +32,6 @@ app.get('/js', (req,res) => {
 
 
 
-app.get('/weird', (req, res) => {
-    try {
-      nonexist();
-    } catch (error) {
-      rollbar.error(error);
-      rollbar.critical("critical error happened")
-      rollbar.warning("check your code and fix")
-      
-
-    }
-    
-  })
 
 
 app.listen(4000, console.log(`App running on 4000`))
