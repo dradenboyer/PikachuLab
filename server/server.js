@@ -11,6 +11,7 @@ var rollbar = new Rollbar({
 // rollbar.log('Hello World!')
 
 const app = express()
+const pikachu = PikachuPic.jpg
 
 app.use(express.json())
 app.use(cors())
@@ -29,8 +30,24 @@ app.get('/js', (req,res) => {
     noexist()
 })
 
+// try {
+//     if(pikachu.addEventListener('click', (evt => {
+//         alert('grrrrrrrrrrrrrr')
+//         rollbar.info('Pikachu was clicked')
+//     }))
+//     )
+// } catch (err) {
+//     console.log(err)
+// }
 
-
+try {
+    if(pikachu.addEventListener('click')) {
+        res.status(200).send(pikachu)
+        rollbar.info('Pikachu was clicked')
+    }
+} catch (err) {
+    console.log(err)
+}
 
 
 app.listen(4000, console.log(`App running on 4000`))
