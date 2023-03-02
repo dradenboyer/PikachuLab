@@ -27,23 +27,23 @@ app.get('/css', (req,res) => {
 })
 app.get('/js', (req,res) => {
     res.status(200).sendFile(path.join(__dirname, '../public/main.js'))
-    noexist()
+    
 })
 
 
 
-try {
-    if(pikachu.addEventListener('click', (evt => {
-        alert('grrrrrrrrrrrrrr')
-        
-    }))
-    ) {
-        res.status(200).send(pikachu)
-        rollbar.info('Pikachu was clicked')
+app.get('/weird', (req, res) => {
+    try {
+      nonexist();
+    } catch (error) {
+      rollbar.error(error);
+      rollbar.critical("critical error happened")
+      rollbar.warning("check your code and fix")
+      
+
     }
-} catch (err) {
-    console.log(err)
-}
+    
+  })
 
 
 app.listen(4000, console.log(`App running on 4000`))
