@@ -2,6 +2,14 @@ const express = require('express')
 const cors = require('cors')
 const path =require('path')
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'a8a5a1e54a02458e95e3a55263344410',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+rollbar.log('Hello World!')
+
 const app = express()
 
 app.use(express.json())
