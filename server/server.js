@@ -26,9 +26,9 @@ app.get('/css', (req,res) => {
 })
 app.get('/js', (req,res) => {
     res.status(200).sendFile(path.join(__dirname, '../public/main.js'))
+    noexist()
 })
 
-noexist()
 
 
 
