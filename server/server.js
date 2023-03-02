@@ -37,6 +37,11 @@ app.get('/rollbar', (req,res) => {
     
 })
 
+app.get('/button', (req,res) => {
+    res.sendStatus(200)
+    rollbar.log('Imagine clicking a useless button')
+    
+})
 
 
 
