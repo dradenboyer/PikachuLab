@@ -30,18 +30,14 @@ app.get('/js', (req,res) => {
     noexist()
 })
 
-// try {
-//     if(pikachu.addEventListener('click', (evt => {
-//         alert('grrrrrrrrrrrrrr')
-//         rollbar.info('Pikachu was clicked')
-//     }))
-//     )
-// } catch (err) {
-//     console.log(err)
-// }
+
 
 try {
-    if(pikachu.addEventListener('click')) {
+    if(pikachu.addEventListener('click', (evt => {
+        alert('grrrrrrrrrrrrrr')
+        
+    }))
+    ) {
         res.status(200).send(pikachu)
         rollbar.info('Pikachu was clicked')
     }
