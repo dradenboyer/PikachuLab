@@ -11,7 +11,7 @@ var rollbar = new Rollbar({
 // rollbar.log('Hello World!')
 
 const app = express()
-const pikachu = PikachuPic.jpg
+const pikachu = 'pikachu1'
 
 app.use(express.json())
 app.use(cors())
