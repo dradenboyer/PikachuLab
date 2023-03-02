@@ -8,14 +8,14 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
-rollbar.log('Hello World!')
+// rollbar.log('Hello World!')
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 app.use(express.static('public'))
-
+rollbar.info('site is visited')
 // console.log(__dirname + '../public/index.html')
 
 app.get('/', (req,res) => {
@@ -30,7 +30,9 @@ app.get('/js', (req,res) => {
 
 noexist()
 
-
+try {
+    
+}
 
 
 
