@@ -30,9 +30,6 @@ app.get('/js', (req,res) => {
 
 noexist()
 
-try {
-    
-}
 
 
 
